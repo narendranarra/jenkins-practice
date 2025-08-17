@@ -2,13 +2,19 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    environment {
+        COURSE = 'Jenkins'
+    }
 
     // Build 
     stages {
         stage('Build') {
             steps {
                 script {
-                    echo 'Building..'
+                    sh """
+                         echo 'Building..'
+                         env
+                    """     
                 }
             }    
         }
@@ -27,7 +33,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             echo "I will always say hello again!"
