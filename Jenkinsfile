@@ -27,12 +27,11 @@ pipeline {
             echo "I will always say hello again!"
             deleteDir()
         }
-        sucess {
-            echo "Hello Sucess"
+        success {
+            echo "Hello Success"
         }
-          failure {
+        failure {
             echo "Hello Failure"
         }
     }
-
 }
